@@ -1,0 +1,248 @@
+export const API_BASE = "http://127.0.0.1:8000";
+
+// Tỷ giá tính theo BRL (Real Brazil) làm gốc
+// 1 BRL ~ 5000 VND ~ 0.2 USD
+export const CURRENCIES = {
+    BRL: { rate: 1, symbol: 'R$', locale: 'pt-BR', name: 'Real Brazil' },
+    USD: { rate: 0.20, symbol: '$', locale: 'en-US', name: 'US Dollar' },
+    VND: { rate: 5000, symbol: '₫', locale: 'vi-VN', name: 'Vietnam Dong' },
+};
+
+export const TRANSLATIONS = {
+    vi: {
+        common: {
+            loading: 'Đang tải dữ liệu...',
+            error: 'Không có dữ liệu hoặc lỗi kết nối.',
+            retry: 'Thử lại',
+            no_data: 'Không có dữ liệu'
+        },
+        nav: {
+            dashboard: 'Tổng Quan',
+            predict: 'Dự Báo AI',
+            chat: 'Trợ Lý Ảo',
+            orders: 'Đơn Đặt',
+            deliveries: 'Giao Hàng',
+            revenue: 'Doanh Thu',
+            cost: 'Chi Phí',
+            distance: 'Khoảng Cách',
+            time: 'Thời Gian'
+        },
+        kpi: {
+            orders: 'Số đơn đặt', channels: 'Số kênh bán', stores: 'Số cửa hàng',
+            deliveries: 'Số đơn giao', drivers: 'Số tài xế', hubs: 'Số trung tâm',
+            revenue: 'Tổng Doanh Thu', cost: 'Tổng Chi Phí', avg_cost: 'Chi Phí TB',
+            avg_dist: 'Khoảng cách TB', avg_prep: 'TG Chuẩn bị', avg_del: 'TG Vận chuyển'
+        },
+        titles: {
+            status: 'Tình trạng đơn đặt',
+            channel_share: 'Tỷ lệ kênh bán hàng',
+            product_share: 'Tỷ lệ loại mặt hàng',
+            trend_orders: 'Lượng đơn theo thời gian',
+            heatmap: 'Lượng đơn theo giờ (Heatmap)',
+            top_cities: 'Top Thành Phố',
+            dow: 'Đơn theo ngày & Loại',
+            vehicle: 'Loại phương tiện',
+            driver_type: 'Loại hình làm việc',
+            trend_del: 'Lượng đơn giao theo tháng',
+            hourly_dist: 'Phân bố đơn trong ngày',
+            top_hubs: 'Top 5 Kho Giao Lớn Nhất',
+            waterfall_city: 'Đơn giao theo TP',
+            top_stores: 'Top 5 Cửa Hàng',
+            trend_rev: 'Tổng doanh thu theo tháng',
+            payment: 'Phương thức thanh toán',
+            cost_city: 'Tỷ lệ chi phí theo TP',
+            cost_channel: 'Tỷ lệ theo Kênh',
+            cost_trend: 'Chi phí TB theo tháng',
+            cost_driver: 'Chi phí theo Loại Xe',
+            waterfall_profit: 'Lợi nhuận theo TP (Waterfall)',
+            cost_dist: 'Chi phí theo Khoảng cách & Loại hàng',
+            dist_share: 'Tỷ lệ loại khoảng cách',
+            dist_vehicle: 'Khoảng cách theo Phương tiện',
+            dist_provider: 'Tỷ lệ KC theo Đơn vị VC',
+            dist_city: 'Tổng KC theo Thành Phố',
+            top_driver_dist: 'Top Tài xế (Quãng đường)',
+            time_share: 'Tỷ lệ thời gian',
+            top_store_prep: 'Top Kho (Chuẩn bị)',
+            top_driver_del: 'Top Tài Xế (Giao hàng)',
+            time_compare: 'So sánh TG theo TP',
+            top_5_channels: 'Top 5 Kênh Bán',
+            revenue_city_type: 'Doanh thu TP & Loại'
+        },
+        predict: {
+            title: 'THAM SỐ ĐẦU VÀO AI', // Sửa lại cho chuẩn
+            distance: 'Khoảng cách vận chuyển',
+            amount: 'Giá trị đơn hàng',
+            weight: 'Khối lượng (kg)',
+            vehicle: 'Phương tiện',
+            traffic: 'Tình trạng giao thông',
+            btn_run: 'CHẠY MÔ HÌNH DỰ BÁO',
+            btn_loading: 'ĐANG TÍNH TOÁN...',
+            result_cost: 'CHI PHÍ DỰ TÍNH',
+            result_time: 'THỜI GIAN DỰ KIẾN (ETA)',
+            insight: 'ĐỀ XUẤT TỪ AI',
+            traffic_opt: { low: 'Thông thoáng', medium: 'Bình thường', high: 'Kẹt xe' },
+            vehicle_opt: { motorbike: 'Xe máy', van: 'Xe tải' },
+
+            // --- CÁC TỪ KHÓA MỚI ---
+            label_base: 'Phí gốc',
+            label_dist: 'Khoảng cách',
+            label_traffic: 'Tác động giao thông',
+            rec_p1: 'Dựa trên thông số hiện tại, việc sử dụng',
+            rec_p2: 'cho quãng đường',
+            rec_p3: 'là phương án tối ưu.',
+            rec_warn: 'Cảnh báo: Thời gian giao hàng cao do kẹt xe, hãy cân nhắc đổi lộ trình.',
+            rec_good: 'Lộ trình này có hiệu suất tốt và chi phí hợp lý.',
+            btn_reset: 'TẠO DỰ BÁO MỚI', // Nút reset
+            awaiting_title: 'CHỜ DỮ LIỆU ĐẦU VÀO',
+            awaiting_desc: 'Hệ thống AI đã sẵn sàng. Nhập thông số và khởi chạy mô hình để nhận dự báo chi tiết.',
+        },
+        units: { m: 'm', min: 'phút' },
+        chat: {
+            welcome: 'Xin chào! Tôi là Trợ lý AI Logistics. Tôi nắm giữ toàn bộ dữ liệu báo cáo. Bạn muốn biết thông tin gì?',
+            placeholder: 'Nhập câu hỏi của bạn về dữ liệu...',
+            typing: 'AI đang phân tích dữ liệu...',
+            prompts: [
+                "Tổng doanh thu và thành phố lớn nhất?",
+                "Tình hình đơn đặt hàng thế nào?",
+                "Phân tích chi phí vận hành?",
+                "Ai là tài xế giao nhanh nhất?",
+                "Cảnh báo về lợi nhuận ở đâu?"
+            ]
+        },
+        units: { m: 'm', min: 'phút' },
+        filters: {
+            city: 'Thành phố',
+            channel: 'Kênh bán',
+            month: 'Tháng',
+            all: 'Tất cả',
+            opt_sao_paulo: 'São Paulo',
+            opt_rio: 'Rio de Janeiro',
+            opt_curitiba: 'Curitiba',
+            opt_porto: 'Porto Alegre',
+            opt_marketplace: 'Sàn TMĐT',
+            opt_own_channel: 'Kênh Riêng',
+            opt_jan: 'Tháng 1',
+            opt_feb: 'Tháng 2',
+            opt_mar: 'Tháng 3',
+            opt_apr: 'Tháng 4'
+        },
+    },
+    en: {
+        common: {
+            loading: 'Loading data...',
+            error: 'No data or connection error.',
+            retry: 'Retry',
+            no_data: 'No Data'
+        },
+        nav: {
+            dashboard: 'Dashboard',
+            predict: 'AI Prediction',
+            chat: 'AI Assistant',
+            orders: 'Orders',
+            deliveries: 'Deliveries',
+            revenue: 'Revenue',
+            cost: 'Cost',
+            distance: 'Distance',
+            time: 'Time'
+        },
+        kpi: {
+            orders: 'Total Orders', channels: 'Sales Channels', stores: 'Total Stores',
+            deliveries: 'Total Deliveries', drivers: 'Total Drivers', hubs: 'Total Hubs',
+            revenue: 'Total Revenue', cost: 'Total Cost', avg_cost: 'Avg Cost',
+            avg_dist: 'Avg Distance', avg_prep: 'Avg Prep Time', avg_del: 'Avg Delivery Time'
+        },
+        titles: {
+            status: 'Order Status',
+            channel_share: 'Sales Channel Share',
+            product_share: 'Product Type Share',
+            trend_orders: 'Orders Over Time',
+            heatmap: 'Orders by Hour (Heatmap)',
+            top_cities: 'Top Cities',
+            dow: 'Orders by Day & Type',
+            vehicle: 'Vehicle Type',
+            driver_type: 'Driver Type',
+            trend_del: 'Deliveries Over Time',
+            hourly_dist: 'Hourly Distribution',
+            top_hubs: 'Top 5 Hubs',
+            waterfall_city: 'Deliveries by City',
+            top_stores: 'Top 5 Stores',
+            trend_rev: 'Revenue Over Time',
+            payment: 'Payment Methods',
+            cost_city: 'Cost Share by City',
+            cost_channel: 'Cost Share by Channel',
+            cost_trend: 'Avg Cost Over Time',
+            cost_driver: 'Cost by Vehicle Type',
+            waterfall_profit: 'Profit by City (Waterfall)',
+            cost_dist: 'Cost by Dist & Product',
+            dist_share: 'Distance Distribution',
+            dist_vehicle: 'Distance by Vehicle',
+            dist_provider: 'Distance by Provider',
+            dist_city: 'Total Distance by City',
+            top_driver_dist: 'Top Drivers (Distance)',
+            time_share: 'Time Ratio',
+            top_store_prep: 'Fastest Stores (Prep)',
+            top_driver_del: 'Fastest Drivers (Del)',
+            time_compare: 'Time Comparison by City',
+            top_5_channels: 'Top 5 Sales Channels',
+            revenue_city_type: 'Revenue by City & Type'
+        },
+        predict: {
+            title: 'AI INPUT PARAMETERS',
+            distance: 'Shipping Distance',
+            amount: 'Order Value',
+            weight: 'Weight (kg)',
+            vehicle: 'Vehicle Type',
+            traffic: 'Traffic Condition',
+            btn_run: 'RUN PREDICTION MODEL',
+            btn_loading: 'CALCULATING...',
+            result_cost: 'ESTIMATED COST',
+            result_time: 'ESTIMATED TIME (ETA)',
+            insight: 'AI RECOMMENDATION',
+            traffic_opt: { low: 'Low', medium: 'Normal', high: 'Heavy' },
+            vehicle_opt: { motorbike: 'Motorbike', van: 'Truck' },
+
+            // --- NEW KEYS ---
+            label_base: 'Base',
+            label_dist: 'Dist',
+            label_traffic: 'Traffic Impact',
+            rec_p1: 'Based on current parameters, using',
+            rec_p2: 'for a distance of',
+            rec_p3: 'is the optimal choice.',
+            rec_warn: 'Warning: High delivery time due to traffic, consider re-routing.',
+            rec_good: 'This route has good performance and reasonable cost.',
+            btn_reset: 'CREATE NEW PREDICTION',
+            awaiting_title: 'AWAITING INPUT',
+            awaiting_desc: 'AI System is ready. Enter parameters and run the model to get detailed forecasts.',
+        },
+        units: { m: 'm', min: 'min' },
+        chat: {
+            welcome: 'Hello! I am your AI Logistics Assistant. Ask me anything about your data!',
+            placeholder: 'Type your question here...',
+            typing: 'AI is analyzing data...',
+            prompts: [
+                "Total revenue and top city?",
+                "How are the orders doing?",
+                "Analyze operating costs?",
+                "Who is the fastest driver?",
+                "Where is the profit warning?"
+            ]
+        },
+        units: { m: 'm', min: 'min' },
+        filters: {
+            city: 'City',
+            channel: 'Channel',
+            month: 'Month',
+            all: 'All',
+            opt_sao_paulo: 'São Paulo',
+            opt_rio: 'Rio de Janeiro',
+            opt_curitiba: 'Curitiba',
+            opt_porto: 'Porto Alegre',
+            opt_marketplace: 'Marketplace',
+            opt_own_channel: 'Own Channel',
+            opt_jan: 'January',
+            opt_feb: 'February',
+            opt_mar: 'March',
+            opt_apr: 'April'
+        },
+    }
+};

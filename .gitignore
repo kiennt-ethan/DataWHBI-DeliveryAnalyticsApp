@@ -1,0 +1,38 @@
+# --- Dependencies (Thư viện) ---
+node_modules/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# --- Build Outputs (File build) ---
+dist/
+build/
+*.egg-info/
+
+# --- Environment Variables (Bảo mật) ---
+.env
+.env.local
+.env.*.local
+
+# --- IDE Settings (Cấu hình máy cá nhân) ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS Files (File rác hệ điều hành) ---
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore AI Models
+*.pkl
+*.h5
+*.model
+DeliveryAnalyticsApp/backend/models/*.pkl
