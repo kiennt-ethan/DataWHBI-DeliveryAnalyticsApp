@@ -109,9 +109,9 @@ Dự án được thực hiện bởi Nhóm 9 – Lớp Hệ thống thông tin 
 ---
 ## 🎓 Lời cảm ơn
 Nhóm xin gửi lời cảm ơn chân thành đến **ThS. Nguyễn Danh Tú** – Giảng viên hướng dẫn, người đã tận tình chỉ bảo và định hướng cho nhóm hoàn thành bài tập lớn này.
+
 ---
 ## 📬 Thông tin liên hệ (Contact)
-
 <div align="center">
 
 ### NGUYỄN TRUNG KIÊN (Ethan)
