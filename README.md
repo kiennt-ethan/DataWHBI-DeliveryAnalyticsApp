@@ -109,6 +109,37 @@ Dự án được thực hiện bởi Nhóm 9 – Lớp Hệ thống thông tin 
 ---
 ## 🎓 Lời cảm ơn
 Nhóm xin gửi lời cảm ơn chân thành đến **ThS. Nguyễn Danh Tú** – Giảng viên hướng dẫn, người đã tận tình chỉ bảo và định hướng cho nhóm hoàn thành bài tập lớn này.
+---
+## 📬 Thông tin liên hệ (Contact)
+
+<div align="center">
+
+### NGUYỄN TRUNG KIÊN (Ethan)
+<i>Trưởng nhóm & Full-stack Developer</i>
+
+<p>
+  Sinh viên K67 - Hệ thống thông tin quản lý<br>
+  Khoa Toán-Tin - Đại học Bách Khoa Hà Nội
+</p>
+
+<!-- Social Links Badges -->
+<a href="mailto:kiennt.ethan@gmail.com">
+  <img src="https://img.shields.io/badge/Email-kiennt.ethan%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+</a>
+
+<a href="https://www.facebook.com/kiennt.ethan/">
+  <img src="https://img.shields.io/badge/Facebook-Nguy%E1%BB%85n%20Trung%20Ki%C3%AAn-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook">
+</a>
+
+<a href="https://www.linkedin.com/in/kiennt-ethan/">
+  <img src="https://img.shields.io/badge/LinkedIn-Ethan%20Nguyen-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+</a>
+
+<a href="https://github.com/kiennt-ethan">
+  <img src="https://img.shields.io/badge/GitHub-kiennt--ethan-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+</a>
+
+</div>
 <div align="center">
 <i>© 2026 Logistics Intelligence Project. Built with passion by Group 9.</i>
 </div>
